@@ -33,8 +33,6 @@
 .Product .Photo
 {
   max-width: 100px; /* Ширина слоя */
-  max-width: 100px; /* Ширина слоя */
-
   padding: 10px; /* Поля вокруг текста */
   border: 2px solid black; /* Параметры границы */
 }
