@@ -15,7 +15,8 @@
 
   getInitialState: function () {
     return {
-      hoverRow: ''
+      hoverRow: '',
+      list: this.props.productRow
     };
   },
 
@@ -24,13 +25,11 @@
   },
 
   deleteRow: function (key) {
-    const index = this.props.productRow.findIndex(value => value.name === key);
-    delete this.props.productRow.splice(index, 1);
-    console.log(this.props.productRow)
+    this.setState({ list: this.state.list.filter(value => value.name !== key) });
   },
 
   render: function () {
-    var productRows = this.props.productRow.map(v =>
+    var productRows = this.state.list.map(v =>
         React.DOM.table({
               key: v.name,
               className: 'Product',
