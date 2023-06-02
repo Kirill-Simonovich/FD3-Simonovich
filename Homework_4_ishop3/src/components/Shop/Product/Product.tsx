@@ -18,25 +18,25 @@ export default class Product extends React.PureComponent<ProductType> {
 
   render() {
     return (
-        <tr key={this.props.keyValue} 
-            className={'product'} 
+        <tr key={this.props.keyValue}
+            className={'product'}
             onClick={() => this.setActive(this.props.keyValue)}
-            style={{ backgroundColor: this.props.active ? '#f59106' : 'white' }}>
+            style={{ backgroundColor: this.props.active ? '#ffe800' : 'white' }}>
           <td className={'cell'}>{this.props.product.name}</td>
           <td className={'cell'}>{this.props.product.price} $</td>
           <td className={'cell'}>{this.props.product.stock} pcs</td>
           <td><img src={this.props.product.url}></img></td>
           <td>
-            <button className={`button red ${this.props.hasChanges ? 'opacity' : ''}`} 
+            <button className={`button red ${this.props.hasChanges ? 'opacity' : ''}`}
                     type={'button'}
-                    onClick={() => this.deleteRow(this.props.product.id)} 
+                    onClick={() => this.deleteRow(this.props.product.id)}
                     disabled={this.props.hasChanges}>Delete
             </button>
           </td>
           <td>
-            <button className={`button ${this.props.hasChanges ? 'opacity' : ''}`} 
+            <button className={`button ${this.props.hasChanges ? 'opacity' : ''}`}
                     type={'button'}
-                    onClick={() => this.setEditProduct(this.props.product)} 
+                    onClick={() => this.setEditProduct(this.props.product)}
                     disabled={this.props.hasChanges}>Edit
             </button>
           </td>

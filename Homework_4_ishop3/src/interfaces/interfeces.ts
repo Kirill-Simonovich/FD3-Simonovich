@@ -5,28 +5,28 @@ export interface AppType {
 export interface Products {
   products: EditProduct[],
   activeId: number | null,
-  setActiveId: any,
-  deleteProduct: any,
+  setActiveId: (id: number) => void,
+  deleteProduct: (key: number) => void,
   isEdit: boolean,
   isCreate: boolean,
-  setCreate: any,
-  setEditProduct: any,
+  setCreate: () => void,
+  setEditProduct: (product: EditProduct) => void,
   product: EditProduct,
-  cancel: any,
+  cancel: () => void,
   hasChanges: boolean,
-  editProduct: any,
-  save: any
+  editProduct: (product: EditProduct) => void,
+  save: (product: EditProduct) => void
 }
 
 
 export interface ProductType {
   product: EditProduct
   active: boolean,
-  setActiveId: any,
-  deleteProduct: any,
-  setEditProduct: any,
+  setActiveId: (id: number) => void,
+  deleteProduct: (key: number) => void,
+  setEditProduct: (product: EditProduct) => void,
   hasChanges: boolean
-  keyValue: number | null | undefined
+  keyValue: any
 }
 
 export interface Title {
@@ -38,7 +38,7 @@ export interface Title {
 }
 
 export interface EditProduct {
-  id?: number | null | undefined
+  id?: any
   name: string,
   url: string,
   price: number,
@@ -47,12 +47,12 @@ export interface EditProduct {
 
 export interface EditProps {
   product: EditProduct,
-  cancel: any,
-  editProduct: any,
-  save: any
+  cancel: () => void,
+  editProduct: (product: EditProduct) => void,
+  save: (product: EditProduct) => void
 }
 
 export interface AddCartProps {
   title: string,
-  cancel: any,
+  cancel: () => void,
 }
