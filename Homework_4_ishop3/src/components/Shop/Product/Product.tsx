@@ -1,27 +1,45 @@
 import * as React from 'react';
-import { ProductType } from '../../../interfaces/interfeces';
+import { EditProduct, ProductType } from '../../../interfaces/interfeces';
 
 export default class Product extends React.PureComponent<ProductType> {
 
-  setActive = (name: string) => {
-    this.props.setActiveId(name);
+  setActive = (id: any) => {
+    !this.props.hasChanges && this.props.setActiveId(id);
   };
 
-  deleteRow = (key: string) => {
-    const isDelete = window.confirm('Вы действительно хотите удалить?');
+  deleteRow = (key: any) => {
+    const isDelete = window.confirm('Are you sure you want to delete?');
     isDelete && this.props.deleteProduct(key);
   };
 
-  render() {
+  setEditProduct = (product: EditProduct) => {
+    this.props.setEditProduct(product);
+  };
 
+  render() {
     return (
-        <tr key={this.props.name} className={'product border'} onClick={() => this.setActive(this.props.name)}
-            style={{ backgroundColor: this.props.active ? 'orange' : 'white' }}>
-          <td className={'cell'}>{this.props.name}</td>
-          <td className={'cell'}>{this.props.price} $</td>
-          <td className={'cell'}>{this.props.stock} шт.</td>
-          <img src={this.props.url}></img>
-          <button className={'button'} type={'button'} onClick={() => this.deleteRow(this.props.name)}>Удалить</button>
+        <tr key={this.props.keyValue} 
+            className={'product'} 
+            onClick={() => this.setActive(this.props.keyValue)}
+            style={{ backgroundColor: this.props.active ? '#f59106' : 'white' }}>
+          <td className={'cell'}>{this.props.product.name}</td>
+          <td className={'cell'}>{this.props.product.price} $</td>
+          <td className={'cell'}>{this.props.product.stock} pcs</td>
+          <td><img src={this.props.product.url}></img></td>
+          <td>
+            <button className={`button red ${this.props.hasChanges ? 'opacity' : ''}`} 
+                    type={'button'}
+                    onClick={() => this.deleteRow(this.props.product.id)} 
+                    disabled={this.props.hasChanges}>Delete
+            </button>
+          </td>
+          <td>
+            <button className={`button ${this.props.hasChanges ? 'opacity' : ''}`} 
+                    type={'button'}
+                    onClick={() => this.setEditProduct(this.props.product)} 
+                    disabled={this.props.hasChanges}>Edit
+            </button>
+          </td>
         </tr>
     );
   }

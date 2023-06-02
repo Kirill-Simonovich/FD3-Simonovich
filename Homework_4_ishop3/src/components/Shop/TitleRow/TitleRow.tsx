@@ -1,19 +1,20 @@
 import * as React from 'react';
 import { Title } from '../../../interfaces/interfeces';
-export default class TitleRow extends React.PureComponent<Title> {
+
+export default class TitleRow extends React.Component<any, any> {
 
   render() {
     return (
-        <div>
-          <div className={'title'}>{this.props.title}</div>
-          <table className={'product'}>
-          <td>Название</td>
-          <td>Цена</td>
-          <td>В наличии</td>
-          <td>Фото</td>
-          <td>Control</td>
-        </table>
-        </div>
+        <thead>
+        <tr className={'product'}>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Count</td>
+          <td>Photo</td>
+          <td>Delete</td>
+          <td>Edit</td>
+        </tr>
+        </thead>
     );
   }
 }

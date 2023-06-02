@@ -1,70 +1,112 @@
-﻿.product {
-    width: max-content;
-    border: solid gray 3px;
-    padding: 3px 7px;
-    background-color: #F0F0F0;
+﻿body {
+    background-color: rgb(155, 155, 155);
+    margin: 20px auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
-.header {
-    width: max-content;
-    border: solid gray 3px;
-}
-
-.product .products {
-    padding-top: 5px;
+.product {
+    background-color: whitesmoke;
+    font-weight: normal;
+    color: #07358f;
+    border-bottom: 2px solid #6678b1;
+    padding: 5px 1px;
+    text-align: center;
 }
 
 .product .Cell {
-    width: 100px; /* Ширина слоя */
-    margin: 10px; /* Значение отступов */
-    border: 2px solid black; /* Параметры границы */
+    width: 120px; /* Ширина слоя */
+    height: 120px;
     padding: 10px; /* Поля вокруг текста */
     text-align: center;
     vertical-align: middle;
 }
 
 .product td {
-    width: 100px; /* Ширина слоя */
-    margin: 10px; /* Значение отступов */
-    padding: 10px; /* Поля вокруг текста */
-    border: 2px solid; /* Параметры границы */
+    width: 120px; /* Ширина слоя */
+    padding: 5px; /* Поля вокруг текста */
     font-weight: bold;
 }
 
-.border {
-    border: 2px solid black; /* Параметры границы */
-    padding: 8px; /* Поля вокруг текста */
-    text-align: center;
-}
-
 .product img {
-    width: 100px; /* Ширина слоя */
-    height: 100px;
+    width: 120px; /* Ширина слоя */
+    height: 120px;
     padding: 10px; /* Поля вокруг текста */
-    border: 2px solid black; /* Параметры границы */
 }
 
 .title {
-    width: 638px; /* Ширина слоя */
+    width: 840px;
     font-size: larger;
     font-weight: bold;
     text-align: center;
     padding: 10px; /* Поля вокруг текста */
+    color: white;
 }
 
 .button {
-    border-radius: 50%;
     background-color: #4CAF50;
+    border-bottom: 2px solid #6678b1;
     color: white;
     text-decoration: blink;
     font-size: 16px;
-    margin: 3px 1px 3px 5px;
+    margin: 3px 2px 3px 5px;
     cursor: pointer;
     vertical-align: bottom;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
+}
+
+.red {
+    background-color: #d24141;
+}
+
+.information {
+    top: 84px;
+    left: 884px;
+    position: fixed;
+    width: 270px;
+    height: 400px;
+    background: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: auto;
+}
+
+.editCard {
+    width: 590px;
+    height: 240px;
+    background: white;
+    padding: 10px;
+    font-size: 20px;
+    font-family: auto;
 }
 
 
+.information div {
+    text-align: left;
+}
+
+
+.informationTitle {
+    text-align: center !important;
+    padding: 10px;
+}
+
+input {
+    left: 90px;
+    position: absolute;
+}
+
+.alert {
+    color: orangered;
+    left: 240px;
+    position: fixed;
+}
+
+.opacity {
+    opacity: 0.7; /* Полупрозрачный фон */
+}
 
 
