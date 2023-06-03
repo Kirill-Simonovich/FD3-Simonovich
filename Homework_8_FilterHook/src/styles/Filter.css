@@ -1,0 +1,15 @@
+﻿.button {
+  margin: 5px; /* Значение отступов */
+}
+
+.checkbox {
+  margin: 5px; /* Значение отступов */
+}
+
+.list {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black; /* Параметры границы */
+  padding: 10px; /* Поля вокруг текста */
+  overflow: auto;
+}
